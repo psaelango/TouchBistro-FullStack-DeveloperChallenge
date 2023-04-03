@@ -33,7 +33,7 @@
 ## Refer following README files to get started with this project
 
 - [Client README](client/README.md)
-- [Server README](client/README.md)
+- [Server README](server/README.md)
 
 ---
 ## My Prior Experience
