@@ -21,3 +21,22 @@ export const listOfPrimes = (start: number, end: number) => {
   }
   return primeNumbers;
 }
+
+export const nextPrime = (num: number): number => {
+  if (num <= 1) return 2;
+  while(!isPrime(++num)){
+    // do nothing
+  };
+  return num;
+}
+
+export const prevPrime = (num: number): number => {
+  if (num <= 2) throw new Error('There are no prime numbers less than 2');
+  let prime = num;
+  let found = false;
+  while (!found) {
+    prime--;
+    if (isPrime(prime)) found = true;
+  }
+  return prime
+}
