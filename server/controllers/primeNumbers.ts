@@ -32,8 +32,7 @@ export const medianOfPrimes = (val: number): PrimesAndMedian => {
     }
   }
 
-  const primeNumbers = listOfPrimes(2, prevPrimeVal - 1);
-  primeNumbers.push(prevPrimeVal);
+  const primeNumbers = listOfPrimes(2, prevPrimeVal);
   const median = medianElems(primeNumbers, true);
   const result = {
     primeNumbers,
