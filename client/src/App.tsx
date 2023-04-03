@@ -1,10 +1,12 @@
+import PrimeNosContainer from './containers/PrimeNosContainer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <div className="App-pages">
+        <PrimeNosContainer />
+      </div>
     </div>
   );
 }
