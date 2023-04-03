@@ -8,27 +8,27 @@ export const isPrime = (num: number): boolean => {
     }
   }
   return isPrime;
-}
+};
 
 export const listOfPrimes = (start: number, end: number) => {
   if (end < start) throw new Error('Start number should be greater than End');
   if (end < 2) throw new Error('There are no prime numbers less than 2');
-  let primeNumbers = [];
-  for (let i = (start > 2 ? start : 2); i <= end; i++) {
-    if(isPrime(i)) {
+  const primeNumbers = [];
+  for (let i = start > 2 ? start : 2; i <= end; i++) {
+    if (isPrime(i)) {
       primeNumbers.push(i);
     }
   }
   return primeNumbers;
-}
+};
 
 export const nextPrime = (num: number): number => {
   if (num <= 1) return 2;
-  while(!isPrime(++num)){
+  while (!isPrime(++num)) {
     // do nothing
-  };
+  }
   return num;
-}
+};
 
 export const prevPrime = (num: number): number => {
   if (num <= 2) throw new Error('There are no prime numbers less than 2');
@@ -38,5 +38,5 @@ export const prevPrime = (num: number): number => {
     prime--;
     if (isPrime(prime)) found = true;
   }
-  return prime
-}
+  return prime;
+};

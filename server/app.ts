@@ -1,8 +1,7 @@
-
-import dotenv from "dotenv";
-import express, { Express } from "express";
-import cors from "cors";
-import setupMiddleware from "./middleware";
+import dotenv from 'dotenv';
+import express, { Express } from 'express';
+import cors from 'cors';
+import setupMiddleware from './middleware';
 
 dotenv.config();
 

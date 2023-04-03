@@ -1,4 +1,4 @@
-import { isPrime, listOfPrimes, nextPrime, prevPrime } from "../primeNumbers";
+import { isPrime, listOfPrimes, nextPrime, prevPrime } from '../primeNumbers';
 
 describe('primeNumbers Utils', () => {
   describe('isPrime', () => {
@@ -19,19 +19,23 @@ describe('primeNumbers Utils', () => {
 
   describe('listOfPrimes', () => {
     it('It should return list of primes between 2 and 10', () => {
-      expect(listOfPrimes(3, 10)).toEqual([3, 5, 7])
+      expect(listOfPrimes(3, 10)).toEqual([3, 5, 7]);
     });
 
     it('It should return list of primes for any negative start values', () => {
-      expect(listOfPrimes(-10, 10)).toEqual([2, 3, 5, 7])
+      expect(listOfPrimes(-10, 10)).toEqual([2, 3, 5, 7]);
     });
 
     it('It should throw error if first value is less than second value', () => {
-      expect(() => listOfPrimes(10, 2)).toThrow('Start number should be greater than End');
+      expect(() => listOfPrimes(10, 2)).toThrow(
+        'Start number should be greater than End'
+      );
     });
 
     it('It should throw error if the second value is less than 2', () => {
-      expect(() => listOfPrimes(-10, 1)).toThrow('There are no prime numbers less than 2');
+      expect(() => listOfPrimes(-10, 1)).toThrow(
+        'There are no prime numbers less than 2'
+      );
     });
   });
 
@@ -50,11 +54,17 @@ describe('primeNumbers Utils', () => {
 
   describe('prevPrime', () => {
     it('It should throw error if the provided value is less than or equal to 2', () => {
-      expect(() => prevPrime(1)).toThrow('There are no prime numbers less than 2');
-      expect(() => prevPrime(0)).toThrow('There are no prime numbers less than 2');
-      expect(() => prevPrime(-5)).toThrow('There are no prime numbers less than 2');
+      expect(() => prevPrime(1)).toThrow(
+        'There are no prime numbers less than 2'
+      );
+      expect(() => prevPrime(0)).toThrow(
+        'There are no prime numbers less than 2'
+      );
+      expect(() => prevPrime(-5)).toThrow(
+        'There are no prime numbers less than 2'
+      );
     });
-    
+
     it('It should return previous prime number if the provided value is greater than 2', () => {
       expect(prevPrime(3)).toEqual(2);
       expect(prevPrime(5)).toEqual(3);

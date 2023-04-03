@@ -1,4 +1,4 @@
-import NodeCache from "node-cache";
+import NodeCache from 'node-cache';
 
 const AppCache = new NodeCache({ stdTTL: 120, checkperiod: 120 });
 

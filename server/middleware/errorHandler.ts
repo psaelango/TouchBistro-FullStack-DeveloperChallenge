@@ -1,10 +1,11 @@
-import { ErrorRequestHandler } from "express";
+import { ErrorRequestHandler } from 'express';
 
 export const errorLogger: ErrorRequestHandler = (err, req, res, next) => {
   console.log(`[Error] ${err.status || 500}: ${err.message}`);
   next(err);
-}
+};
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export const errorResponder: ErrorRequestHandler = (err, req, res, next) => {
   const errStatus = err.status || 500;
   const errMsg = err.message || 'Something went wrong';
@@ -13,7 +14,7 @@ export const errorResponder: ErrorRequestHandler = (err, req, res, next) => {
     error: {
       status: errStatus,
       message: errMsg,
-      stack: err.stack
-    }
+      stack: err.stack,
+    },
   });
-}
+};
