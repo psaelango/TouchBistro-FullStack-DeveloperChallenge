@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a greeting 1`] = `
+<div
+  className="grid gap-4 grid-cols-3 grid-rows-1"
+>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="group"
+      >
+        <input
+          autoFocus={true}
+          data-testid="maxPrimeSearch"
+          disabled={false}
+          max={1000000}
+          min={2}
+          name="primeUpto"
+          onChange={[Function]}
+          required={true}
+          type="number"
+          value={0}
+        />
+        <div
+          className="form-input-label"
+        >
+          Find Prime Numbers Upto
+        </div>
+      </div>
+      <div
+        className="relative items-center block max-w-sm p-6 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700"
+      >
+        <button
+          data-testid="maxPrimeSubmit"
+          type="submit"
+        >
+          Get Primes
+        </button>
+        <span>
+          <button
+            data-testid="maxPrimeClear"
+            onClick={[Function]}
+            type="button"
+          >
+            Clear
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
+  <div>
+    <div
+      className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    >
+      <p
+        className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white"
+      >
+        List of Prime numbers
+      </p>
+      <ul
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "backgroundColor": "#002b36",
+            "border": 0,
+            "listStyle": "none",
+            "marginBottom": "0.5em",
+            "marginLeft": "0.125em",
+            "marginRight": 0,
+            "marginTop": "0.5em",
+            "padding": 0,
+          }
+        }
+      >
+        <li
+          style={
+            Object {
+              "marginLeft": 0,
+              "paddingLeft": "1.125em",
+              "paddingTop": "0.25em",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            onClick={[Function]}
+            style={
+              Object {
+                "MozUserSelect": "text",
+                "WebkitUserSelect": "text",
+                "color": "#268bd2",
+                "cursor": "default",
+                "display": "inline-block",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            <span>
+              root
+              :
+            </span>
+          </label>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#657b83",
+                "cursor": "default",
+                "paddingLeft": "0.5em",
+              }
+            }
+          >
+            <span>
+              <span
+                style={
+                  Object {
+                    "marginLeft": "0.3em",
+                    "marginRight": "0.3em",
+                  }
+                }
+              >
+                []
+              </span>
+               
+              0 items
+            </span>
+          </span>
+          <ul
+            style={
+              Object {
+                "display": "block",
+                "listStyle": "none",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div
+      className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    >
+      <p
+        className="max-w-lg text-3xl font-semibold leading-normal text-gray-900 dark:text-white"
+      >
+        Median will be displayed here
+      </p>
+      <p
+        className="text-sm text-gray-700 dark:text-gray-400"
+      >
+        For an even number of elements [2, 3, 5, 7] there will be two medians [3, 5] values
+      </p>
+      <br />
+      <p
+        className="text-sm text-gray-700 dark:text-gray-400"
+      >
+        For an odd number of elements [2, 3, 5, 7, 11] there will be only one median [5] value
+      </p>
+      <div
+        className="px-6 pt-4 pb-2"
+      />
+    </div>
+  </div>
+</div>
+`;
