@@ -12,4 +12,11 @@ router.get(
     res.send(medianOfPrimes(Number(req.params.maxNum)))
 );
 
+router.get(
+  '/prime/median/sieve-algo/:maxNum',
+  medianPrimeReqValidation,
+  (req: Request, res: Response) =>
+    res.send(medianOfPrimes(Number(req.params.maxNum), true))
+);
+
 module.exports = router;

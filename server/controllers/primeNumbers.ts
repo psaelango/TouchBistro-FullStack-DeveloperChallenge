@@ -3,6 +3,7 @@ import {
   nextPrime,
   prevPrime,
   isPrime,
+  sieveOfEratosthenes
 } from '../utils/primeNumbers';
 import { medianElems } from '../utils/mathFns';
 import AppCache from '../cache';
@@ -14,7 +15,7 @@ interface PrimesAndMedian {
 
 const MIN_CACHE_VALUE = 100000;
 
-export const medianOfPrimes = (val: number): PrimesAndMedian => {
+export const medianOfPrimes = (val: number, sieveAlgo = false): PrimesAndMedian => {
   if (val < 2) throw new Error('There are no prime numbers less than 2');
   console.log('Key list = ', AppCache.keys());
 
@@ -28,11 +29,12 @@ export const medianOfPrimes = (val: number): PrimesAndMedian => {
     console.log('Current key = ', key);
     ifCachedValue = AppCache.has(key);
     if (ifCachedValue) {
+      console.log(`RETURNING CACHED VALUE`);
       return AppCache.get(key) as PrimesAndMedian;
     }
   }
 
-  const primeNumbers = listOfPrimes(2, prevPrimeVal);
+  const primeNumbers = sieveAlgo ? sieveOfEratosthenes(prevPrimeVal) : listOfPrimes(2, prevPrimeVal);
   const median = medianElems(primeNumbers, true);
   const result = {
     primeNumbers,

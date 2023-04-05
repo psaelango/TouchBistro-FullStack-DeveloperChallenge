@@ -1,4 +1,4 @@
-import { isPrime, listOfPrimes, nextPrime, prevPrime } from '../primeNumbers';
+import { isPrime, listOfPrimes, nextPrime, prevPrime, sieveOfEratosthenes } from '../primeNumbers';
 
 describe('primeNumbers Utils', () => {
   describe('isPrime', () => {
@@ -68,6 +68,18 @@ describe('primeNumbers Utils', () => {
     it('It should return previous prime number if the provided value is greater than 2', () => {
       expect(prevPrime(3)).toEqual(2);
       expect(prevPrime(5)).toEqual(3);
+    });
+  });
+
+  describe('sieveOfEratosthenes', () => {
+    it('It should return list of primes between 2 and 11', () => {
+      expect(sieveOfEratosthenes(11)).toEqual([2, 3, 5, 7, 11]);
+    });
+
+    it('It should throw error if the second value is less than 2', () => {
+      expect(() => sieveOfEratosthenes(-10)).toThrow(
+        'There are no prime numbers less than 2'
+      );
     });
   });
 });

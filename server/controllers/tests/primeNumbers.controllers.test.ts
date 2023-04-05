@@ -25,9 +25,14 @@ describe('primeNumbers Controllers', () => {
       expect(medianOfPrimes(100003)).toHaveProperty('median');
     });
 
-    it('It should returm cache value for a given value greater than MIN_CACHE_VALUE', () => {
+    it('It should return cache value for a given value greater than MIN_CACHE_VALUE', () => {
       expect(medianOfPrimes(100005)).toHaveProperty('primeNumbers');
       expect(medianOfPrimes(100005)).toHaveProperty('median');
+    });
+
+    it('It should return value faster for a larger number as well when sieve algorithm is used', () => {
+      expect(medianOfPrimes(200000, true)).toHaveProperty('primeNumbers');
+      expect(medianOfPrimes(200000, true)).toHaveProperty('median');
     });
   });
 });
