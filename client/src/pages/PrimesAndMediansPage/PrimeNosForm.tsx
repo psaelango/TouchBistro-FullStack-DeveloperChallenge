@@ -5,6 +5,8 @@ import LongWaitLoader from "../../components/Loaders/LongWaitLoader";
 import FetchTimeDisplay from "../../components/Loaders/FetchTimeDisplay";
 
 const PrimeNosForm: FC = () => {
+  const PRIME_MEDIAN_URL = process.env.REACT_APP_PRIME_MEDIAN_SIEVE_ALGO_URL || '';
+
   const [inputVal, setInputVal] = useState(0);
   const [loadingData, setLoadingData] = useState(false);
   const [fetchTime, setFetchTime] = useState(0);
@@ -16,8 +18,12 @@ const PrimeNosForm: FC = () => {
     setLoadingData(true);
     setFetchTime(0);
     var startTime = (new Date()).getTime();
-    const response = await fetch(`http://127.0.0.1:8000/api/prime/median/${inputVal}`);
+    const response: Response = await fetch(`${PRIME_MEDIAN_URL}${inputVal}`);
     const jsonData = await response.json();
+    if (response.status !== 200) {
+      alert(JSON.stringify(jsonData));
+      return;
+    }
     var endTime = (new Date()).getTime();
     setFetchTime(endTime - startTime);
     setLoadingData(false);
